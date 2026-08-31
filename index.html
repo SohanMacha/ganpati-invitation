@@ -3,25 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#050505">
-<meta name="description" content="Ganpati Bappa Morya - Ganesh Utsav Invitation">
+<meta name="theme-color" content="#030805">
+<meta name="description" content="Ganpati Bappa Morya - Royal Ganesh Utsav Invitation">
 
-<title>Ganpati Bappa Morya | Ganesh Utsav</title>
+<title>गणपती बाप्पा मोरया | Ganesh Utsav Royal Invitation</title>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Rozha+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700;900&family=Cinzel:wght@500;600;700;800&family=Montserrat:wght@300;400;500;600;700&family=Rozha+One&family=Yatra+One&display=swap');
 
 :root{
-    --black:#030303;
-    --black2:#080808;
-    --green:#071810;
-    --green2:#0d291b;
+    --black:#020503;
+    --emerald-deep:#05140d;
+    --emerald-mid:#0b261b;
     --gold:#d4af37;
-    --gold-light:#fff0a6;
-    --gold-bright:#ffe37a;
-    --gold-dark:#8b6914;
-    --cream:#fff9df;
-    --muted:#c5c5b7;
+    --gold-light:#fff3b3;
+    --gold-bright:#ffdf6d;
+    --gold-dark:#7a5a0f;
+    --cream:#fffdf2;
+    --gold-gradient: linear-gradient(135deg, #fff7c2 0%, #f3d060 25%, #d4af37 50%, #876211 80%, #f6d86b 100%);
 }
 
 *{
@@ -38,25 +37,24 @@ html{
 body{
     min-height:100vh;
     background:
-        radial-gradient(circle at 50% -10%,#4d3b0d 0%,transparent 32%),
-        radial-gradient(circle at 0% 50%,#123521 0%,transparent 35%),
-        radial-gradient(circle at 100% 90%,#123521 0%,transparent 35%),
-        linear-gradient(180deg,#020202,#07150d 55%,#020202);
+        radial-gradient(circle at 50% 0%, #302404 0%, transparent 40%),
+        radial-gradient(circle at 10% 40%, #0d3822 0%, transparent 45%),
+        radial-gradient(circle at 90% 70%, #0d3822 0%, transparent 45%),
+        linear-gradient(180deg, #020604 0%, #06170f 50%, #020604 100%);
     color:var(--cream);
     font-family:'Montserrat',sans-serif;
     overflow-x:hidden;
 }
 
 /* =========================
-   GOLDEN AMBIENCE
+   ROYAL AMBIENCE & PARTICLES
 ========================= */
-
 #ambient{
     position:fixed;
     inset:0;
     pointer-events:none;
     overflow:hidden;
-    z-index:0;
+    z-index:1;
 }
 
 .spark{
@@ -66,93 +64,69 @@ body{
     height:3px;
     border-radius:50%;
     background:var(--gold-light);
-    box-shadow:0 0 12px var(--gold);
+    box-shadow:0 0 10px var(--gold-bright), 0 0 20px var(--gold);
     animation:rise linear infinite;
     opacity:0;
 }
 
 @keyframes rise{
-    0%{
-        transform:translateY(0) scale(.4);
-        opacity:0;
-    }
-    15%{opacity:.8;}
-    80%{opacity:.4;}
-    100%{
-        transform:translateY(-110vh) scale(1.4);
-        opacity:0;
-    }
+    0%{ transform:translateY(0) scale(.3); opacity:0; }
+    20%{ opacity:.9; }
+    80%{ opacity:.5; }
+    100%{ transform:translateY(-115vh) scale(1.3); opacity:0; }
 }
 
 /* =========================
-   OPENING SCREEN
+   OPENING ENVELOPE / SEAL SCREEN
 ========================= */
-
 #opening{
     position:fixed;
     inset:0;
-    z-index:9999;
+    z-index:99999;
     display:flex;
     flex-direction:column;
     align-items:center;
     justify-content:center;
     text-align:center;
-    background:
-        radial-gradient(circle at center,#342909 0%,#07150d 35%,#020202 80%);
-    transition:
-        opacity 1s ease,
-        visibility 1s ease;
+    background: radial-gradient(circle at center, #2e2106 0%, #071910 45%, #010402 90%);
+    transition: opacity 1.2s cubic-bezier(0.77, 0, 0.175, 1), visibility 1.2s ease, transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
 }
 
 #opening.hide{
     opacity:0;
     visibility:hidden;
+    transform:scale(1.08);
     pointer-events:none;
 }
 
 .gold-line{
     position:absolute;
-    left:5%;
-    right:5%;
+    left:8%;
+    right:8%;
     height:1px;
-    background:linear-gradient(
-        90deg,
-        transparent,
-        var(--gold),
-        var(--gold-light),
-        var(--gold),
-        transparent
-    );
-    box-shadow:0 0 15px rgba(212,175,55,.7);
+    background:linear-gradient(90deg, transparent, var(--gold), var(--gold-light), var(--gold), transparent);
+    box-shadow:0 0 15px rgba(212,175,55,.8);
 }
-
-.gold-line.top{top:35px;}
-.gold-line.bottom{bottom:35px;}
+.gold-line.top{top:40px;}
+.gold-line.bottom{bottom:40px;}
 
 .open-mantra{
     color:var(--gold-light);
     font-family:'Rozha One',serif;
-    font-size:17px;
-    letter-spacing:3px;
-    margin-bottom:30px;
+    font-size:18px;
+    letter-spacing:4px;
+    margin-bottom:32px;
+    text-shadow:0 0 15px rgba(212,175,55,0.6);
 }
 
 .open-ring{
-    width:175px;
-    height:175px;
+    width:180px;
+    height:180px;
     border-radius:50%;
-    padding:5px;
-    background:linear-gradient(
-        135deg,
-        #fff5b5,
-        #d4af37,
-        #7d5b0e,
-        #f6d86c
-    );
-    box-shadow:
-        0 0 25px rgba(212,175,55,.45),
-        0 0 80px rgba(212,175,55,.18);
-    animation:ringPulse 3s ease-in-out infinite;
+    padding:6px;
+    background:var(--gold-gradient);
+    box-shadow:0 0 35px rgba(212,175,55,.6), 0 0 90px rgba(212,175,55,.25);
+    animation:ringPulse 2.8s ease-in-out infinite;
 }
 
 .open-button{
@@ -160,193 +134,152 @@ body{
     height:100%;
     border-radius:50%;
     border:2px solid #fff1a5;
-    background:
-        radial-gradient(circle,#47370c,#171207 70%);
+    background:radial-gradient(circle, #423209 0%, #151004 80%);
     color:var(--gold-light);
     cursor:pointer;
     display:flex;
     align-items:center;
     justify-content:center;
     flex-direction:column;
+    transition:transform 0.3s ease;
 }
 
 .open-symbol{
     font-family:'Rozha One',serif;
-    font-size:48px;
+    font-size:52px;
     line-height:1;
-    text-shadow:0 0 20px rgba(255,226,112,.8);
+    background:var(--gold-gradient);
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+    filter:drop-shadow(0 0 15px rgba(255,223,109,0.7));
 }
 
 .open-button span{
-    margin-top:10px;
+    margin-top:8px;
+    font-family:'Cinzel',serif;
     font-size:10px;
     font-weight:700;
     letter-spacing:3px;
+    color:var(--gold-light);
 }
 
 .open-hint{
     margin-top:28px;
-    color:#b9b9a9;
+    color:#b3b3a3;
     font-size:11px;
-    letter-spacing:2px;
+    letter-spacing:3px;
     text-transform:uppercase;
 }
 
 @keyframes ringPulse{
-    0%,100%{
-        transform:scale(1);
-        box-shadow:0 0 25px rgba(212,175,55,.4);
-    }
-    50%{
-        transform:scale(1.045);
-        box-shadow:0 0 55px rgba(212,175,55,.75);
-    }
+    0%,100%{ transform:scale(1); box-shadow:0 0 25px rgba(212,175,55,.4); }
+    50%{ transform:scale(1.05); box-shadow:0 0 60px rgba(212,175,55,.8); }
 }
 
 /* =========================
-   PAGE
+   PAGE CONTAINER
 ========================= */
-
 .page{
     position:relative;
     z-index:2;
     width:100%;
-    max-width:540px;
+    max-width:520px;
     margin:auto;
-    padding:22px 13px 55px;
+    padding:25px 14px 60px;
 }
 
 .card{
     position:relative;
-    padding:42px 20px 30px;
+    padding:45px 22px 35px;
     background:
-        linear-gradient(
-            145deg,
-            rgba(20,31,22,.97),
-            rgba(5,9,7,.98)
-        );
-    border:1px solid rgba(212,175,55,.65);
-    border-radius:30px;
+        radial-gradient(circle at 50% 10%, rgba(26,59,41,0.5) 0%, transparent 60%),
+        linear-gradient(145deg, rgba(16, 32, 23, 0.98), rgba(4, 9, 6, 0.99));
+    border:1.5px solid rgba(212,175,55,.65);
+    border-radius:32px;
     box-shadow:
-        0 30px 90px rgba(0,0,0,.9),
-        inset 0 0 50px rgba(212,175,55,.06);
+        0 30px 100px rgba(0,0,0,.95),
+        inset 0 0 60px rgba(212,175,55,.08);
+    backdrop-filter: blur(12px);
 }
 
+/* Luxury Inner Border */
 .card:before{
     content:"";
     position:absolute;
-    inset:7px;
-    border:1px solid rgba(212,175,55,.2);
-    border-radius:24px;
+    inset:8px;
+    border:1px solid rgba(212,175,55,.22);
+    border-radius:26px;
     pointer-events:none;
 }
 
+/* Ornate Corner Elements */
 .corner{
     position:absolute;
-    width:34px;
-    height:34px;
+    width:36px;
+    height:36px;
     border-color:var(--gold);
     border-style:solid;
     z-index:3;
 }
-
-.tl{
-    top:13px;
-    left:13px;
-    border-width:2px 0 0 2px;
-    border-radius:8px 0 0 0;
-}
-
-.tr{
-    top:13px;
-    right:13px;
-    border-width:2px 2px 0 0;
-    border-radius:0 8px 0 0;
-}
-
-.bl{
-    bottom:13px;
-    left:13px;
-    border-width:0 0 2px 2px;
-    border-radius:0 0 0 8px;
-}
-
-.br{
-    bottom:13px;
-    right:13px;
-    border-width:0 2px 2px 0;
-    border-radius:0 0 8px 0;
-}
+.tl{ top:14px; left:14px; border-width:2px 0 0 2px; border-radius:10px 0 0 0; }
+.tr{ top:14px; right:14px; border-width:2px 2px 0 0; border-radius:0 10px 0 0; }
+.bl{ bottom:14px; left:14px; border-width:0 0 2px 2px; border-radius:0 0 0 10px; }
+.br{ bottom:14px; right:14px; border-width:0 2px 2px 0; border-radius:0 0 10px 0; }
 
 /* =========================
-   HEADER
+   HEADER & TITLES
 ========================= */
-
 .mantra{
     text-align:center;
     color:var(--gold-light);
     font-family:'Rozha One',serif;
-    font-size:15px;
+    font-size:16px;
     letter-spacing:2px;
-    margin-bottom:13px;
+    margin-bottom:12px;
+    text-shadow:0 0 12px rgba(212,175,55,0.4);
 }
 
 .title{
     text-align:center;
-    font-family:'Rozha One',serif;
-    font-size:34px;
+    font-family:'Rozha One', 'Yatra One', serif;
+    font-size:36px;
     line-height:1.15;
-    background:
-        linear-gradient(
-            135deg,
-            #fff6bd 0%,
-            #f5d768 30%,
-            #d4af37 55%,
-            #8b6813 100%
-        );
+    background:var(--gold-gradient);
     -webkit-background-clip:text;
     background-clip:text;
     color:transparent;
-    filter:drop-shadow(0 4px 10px rgba(0,0,0,.7));
+    filter:drop-shadow(0 4px 12px rgba(0,0,0,.8));
 }
 
 .subtitle{
     text-align:center;
-    margin-top:8px;
+    margin-top:6px;
     font-family:'Cinzel',serif;
-    font-size:14px;
+    font-size:15px;
     font-weight:700;
     letter-spacing:4px;
     color:var(--gold-light);
 }
 
 /* =========================
-   GANPATI AREA
+   GANPATI LUXURY ARCH FRAME
 ========================= */
-
 .ganpati-section{
     position:relative;
-    margin:28px auto 20px;
-    width:270px;
-    height:300px;
+    margin:30px auto 20px;
+    width:275px;
+    height:310px;
 }
 
 .ganpati-frame{
     position:absolute;
     inset:0;
     padding:9px;
-    border-radius:145px 145px 22px 22px;
-    background:
-        linear-gradient(
-            135deg,
-            #fff1a2,
-            #d4af37,
-            #7d5b0e,
-            #f2d35e
-        );
+    border-radius:150px 150px 24px 24px;
+    background:var(--gold-gradient);
     box-shadow:
-        0 0 35px rgba(212,175,55,.35),
-        0 18px 45px rgba(0,0,0,.8);
+        0 0 40px rgba(212,175,55,.45),
+        0 20px 50px rgba(0,0,0,.9);
 }
 
 .ganpati-inner{
@@ -354,7 +287,7 @@ body{
     width:100%;
     height:100%;
     overflow:hidden;
-    border-radius:136px 136px 15px 15px;
+    border-radius:141px 141px 16px 16px;
     background:#07140d;
 }
 
@@ -362,8 +295,8 @@ body{
     content:"";
     position:absolute;
     inset:8px;
-    border:1px dashed rgba(255,226,116,.45);
-    border-radius:130px 130px 12px 12px;
+    border:1.5px dashed rgba(255,226,116,.5);
+    border-radius:135px 135px 12px 12px;
     pointer-events:none;
     z-index:3;
 }
@@ -373,7 +306,7 @@ body{
     height:100%;
     object-fit:cover;
     display:block;
-    border-radius:136px 136px 15px 15px;
+    border-radius:141px 141px 16px 16px;
 }
 
 #flowerLayer{
@@ -387,64 +320,49 @@ body{
 .flower{
     position:absolute;
     top:-40px;
-    font-size:25px;
+    font-size:26px;
     animation:flowerFall linear forwards;
-    filter:drop-shadow(0 3px 4px rgba(0,0,0,.7));
+    filter:drop-shadow(0 4px 6px rgba(0,0,0,.7));
 }
 
 @keyframes flowerFall{
-    0%{
-        transform:translateY(-40px) rotate(0deg) scale(.7);
-        opacity:0;
-    }
-    10%{opacity:1;}
-    80%{opacity:1;}
-    100%{
-        transform:translateY(330px) rotate(600deg) scale(1.1);
-        opacity:0;
-    }
+    0%{ transform:translateY(-40px) rotate(0deg) scale(.6); opacity:0; }
+    15%{ opacity:1; }
+    80%{ opacity:1; }
+    100%{ transform:translateY(340px) rotate(640deg) scale(1.15); opacity:0; }
 }
 
 .flower-button{
     display:block;
-    margin:12px auto 25px;
+    margin:14px auto 26px;
     border:1px solid #e3c65a;
     border-radius:40px;
-    padding:14px 23px;
-    background:
-        linear-gradient(135deg,#3b2c08,#171207);
+    padding:14px 26px;
+    background:linear-gradient(135deg, #443209, #150f04);
     color:var(--gold-light);
     font-family:'Cinzel',serif;
-    font-size:11px;
+    font-size:11.5px;
     font-weight:700;
-    letter-spacing:1.2px;
+    letter-spacing:1.5px;
     cursor:pointer;
-    box-shadow:
-        0 0 20px rgba(212,175,55,.15),
-        inset 0 0 15px rgba(212,175,55,.08);
-    transition:.25s;
+    box-shadow:0 0 25px rgba(212,175,55,.2), inset 0 0 15px rgba(212,175,55,.12);
+    transition:all .3s ease;
 }
 
-.flower-button:active{
-    transform:scale(.95);
-}
-
-.flower-button:hover{
-    box-shadow:0 0 30px rgba(212,175,55,.35);
-}
+.flower-button:active{ transform:scale(.95); }
+.flower-button:hover{ box-shadow:0 0 35px rgba(212,175,55,.45); }
 
 /* =========================
-   SECTION HEADINGS
+   SECTION DIVIDERS
 ========================= */
-
 .section{
     display:flex;
     align-items:center;
-    gap:11px;
-    margin:30px 0 17px;
+    gap:12px;
+    margin:32px 0 18px;
     color:var(--gold-light);
     font-family:'Cinzel',serif;
-    font-size:14px;
+    font-size:14.5px;
     font-weight:700;
     letter-spacing:2px;
     text-transform:uppercase;
@@ -455,96 +373,82 @@ body{
     content:"";
     flex:1;
     height:1px;
-    background:
-        linear-gradient(
-            90deg,
-            transparent,
-            var(--gold),
-            transparent
-        );
+    background:linear-gradient(90deg, transparent, var(--gold), transparent);
 }
 
 /* =========================
-   FAMILY PHOTO
+   GRANDPARENTS PHOTO FRAME
 ========================= */
-
 .photo-frame{
     width:100%;
-    max-width:275px;
-    margin:25px auto 10px;
-    padding:6px;
-    background:
-        linear-gradient(
-            135deg,
-            #fff0a2,
-            #d4af37,
-            #805f11,
-            #f4d45e
-        );
-    border-radius:20px;
-    box-shadow:0 18px 40px rgba(0,0,0,.8);
+    max-width:280px;
+    margin:16px auto 12px;
+    padding:7px;
+    background:var(--gold-gradient);
+    border-radius:22px;
+    box-shadow:0 18px 45px rgba(0,0,0,.85);
 }
 
 .photo-frame img{
     display:block;
     width:100%;
     height:auto;
-    border-radius:15px;
+    border-radius:16px;
     background:#050805;
 }
 
 /* =========================
    HOST
 ========================= */
-
 .host{
     display:block;
     width:fit-content;
     max-width:100%;
-    margin:23px auto 5px;
-    padding:12px 20px;
-    border:1px solid rgba(212,175,55,.4);
+    margin:22px auto 8px;
+    padding:12px 24px;
+    border:1px solid rgba(212,175,55,.45);
     border-radius:30px;
-    background:rgba(212,175,55,.06);
+    background:rgba(212,175,55,.08);
     text-align:center;
+    box-shadow:0 6px 20px rgba(0,0,0,0.4);
 }
 
 .host-label{
-    color:#aaa99a;
-    font-size:9px;
-    letter-spacing:2px;
+    color:#b3b3a3;
+    font-size:9.5px;
+    letter-spacing:2.5px;
     text-transform:uppercase;
-    margin-bottom:5px;
+    margin-bottom:4px;
 }
 
 .host-name{
     color:var(--gold-light);
-    font-size:14px;
+    font-size:15px;
     font-weight:700;
 }
 
 /* =========================
    COUNTDOWN
 ========================= */
-
 .countdown{
     display:grid;
     grid-template-columns:repeat(4,1fr);
-    gap:7px;
+    gap:8px;
 }
 
 .time-box{
-    padding:13px 4px;
+    padding:14px 4px;
     text-align:center;
-    border:1px solid rgba(212,175,55,.28);
-    border-radius:14px;
-    background:rgba(255,255,255,.025);
+    border:1px solid rgba(212,175,55,.3);
+    border-radius:16px;
+    background:rgba(255,255,255,.03);
+    box-shadow:inset 0 0 15px rgba(212,175,55,.05);
 }
 
 .time-box strong{
     display:block;
     color:var(--gold-light);
-    font-size:21px;
+    font-size:22px;
     font-weight:700;
 }
 
@@ -552,64 +456,58 @@ body{
     display:block;
     margin-top:4px;
     color:#aaa99a;
-    font-size:8px;
+    font-size:8.5px;
     letter-spacing:1px;
 }
 
 /* =========================
-   EVENTS
+   EVENTS SCHEDULE
 ========================= */
-
 .events{
     display:flex;
     flex-direction:column;
-    gap:12px;
+    gap:14px;
 }
 
 .event{
     display:flex;
     align-items:center;
-    gap:14px;
-    padding:16px;
-    border:1px solid rgba(212,175,55,.25);
-    border-radius:17px;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(212,175,55,.05),
-            rgba(255,255,255,.015)
-        );
+    gap:16px;
+    padding:16px 18px;
+    border:1px solid rgba(212,175,55,.28);
+    border-radius:18px;
+    background:linear-gradient(135deg, rgba(212,175,55,.07), rgba(255,255,255,.02));
+    transition:transform .2s ease, border-color .2s ease;
+}
+
+.event:hover{
+    transform:translateY(-2px);
+    border-color:var(--gold);
 }
 
 .event-icon{
-    min-width:46px;
-    width:46px;
-    height:46px;
+    min-width:48px;
+    width:48px;
+    height:48px;
     border-radius:50%;
     display:flex;
     align-items:center;
     justify-content:center;
-    background:
-        linear-gradient(
-            135deg,
-            #fff0a0,
-            #d4af37,
-            #8b6813
-        );
+    background:var(--gold-gradient);
     color:#241a04;
-    font-size:21px;
-    box-shadow:0 5px 15px rgba(0,0,0,.5);
+    font-size:22px;
+    box-shadow:0 6px 15px rgba(0,0,0,.5);
 }
 
 .event h3{
     color:var(--gold-light);
-    font-size:14px;
-    margin-bottom:5px;
+    font-size:15px;
+    margin-bottom:4px;
 }
 
 .event p{
     color:var(--cream);
-    font-size:12.5px;
+    font-size:13px;
     line-height:1.5;
 }
 
@@ -619,52 +517,50 @@ body{
 }
 
 /* =========================
-   LOCATION
+   LOCATION & MAP
 ========================= */
-
 .location{
-    padding:20px 15px;
+    padding:22px 16px;
     text-align:center;
-    border:1px solid rgba(212,175,55,.28);
-    border-radius:18px;
-    background:rgba(255,255,255,.025);
+    border:1px solid rgba(212,175,55,.3);
+    border-radius:20px;
+    background:rgba(255,255,255,.03);
 }
 
 .location-symbol{
-    font-size:28px;
-    margin-bottom:9px;
+    font-size:30px;
+    margin-bottom:10px;
 }
 
 .address{
     color:var(--cream);
-    font-size:13.5px;
-    line-height:1.65;
-    margin-bottom:18px;
+    font-size:14px;
+    line-height:1.7;
+    margin-bottom:20px;
 }
 
 .map-button{
     display:block;
-    padding:14px;
+    padding:15px;
     border-radius:30px;
     text-decoration:none;
-    color:#1d1504;
-    font-size:12px;
+    color:#1a1202;
+    font-size:12.5px;
     font-weight:800;
     letter-spacing:1px;
-    background:
-        linear-gradient(
-            135deg,
-            #fff0a0,
-            #d4af37,
-            #a67c13
-        );
-    box-shadow:0 8px 20px rgba(212,175,55,.25);
+    background:var(--gold-gradient);
+    box-shadow:0 8px 25px rgba(212,175,55,.35);
+    transition:transform .2s ease, box-shadow .2s ease;
+}
+
+.map-button:hover{
+    transform:translateY(-2px);
+    box-shadow:0 10px 30px rgba(212,175,55,.5);
 }
 
 /* =========================
-   ACTION BUTTONS
+   ACTIONS
 ========================= */
-
 .actions{
     display:flex;
     gap:10px;
@@ -673,75 +569,58 @@ body{
 
 .action{
     flex:1;
-    padding:13px 8px;
+    padding:14px 10px;
     border-radius:30px;
-    border:1px solid rgba(212,175,55,.4);
-    background:rgba(212,175,55,.06);
+    border:1px solid rgba(212,175,55,.45);
+    background:rgba(212,175,55,.08);
     color:var(--gold-light);
     font-weight:700;
-    font-size:11px;
+    font-size:11.5px;
     cursor:pointer;
-    transition:0.2s;
+    transition:all 0.2s ease;
 }
 
 .action:hover{
-    background:rgba(212,175,55,.18);
+    background:rgba(212,175,55,.2);
 }
 
 /* =========================
-   MESSAGE
+   MESSAGE & FOOTER
 ========================= */
-
 .message{
-    margin-top:26px;
+    margin-top:28px;
     text-align:center;
-    color:#bcbcaf;
-    font-size:12.5px;
-    line-height:1.75;
+    color:#c4c4b5;
+    font-size:13px;
+    line-height:1.8;
     font-style:italic;
 }
 
 .footer{
-    margin-top:20px;
+    margin-top:22px;
     text-align:center;
     color:var(--gold);
-    font-size:19px;
-    letter-spacing:7px;
+    font-size:22px;
+    letter-spacing:8px;
 }
 
-/* =========================
-   RESPONSIVE
-========================= */
-
 @media(max-width:380px){
-    .page{
-        padding-left:8px;
-        padding-right:8px;
-    }
-    .card{
-        padding-left:15px;
-        padding-right:15px;
-    }
-    .title{
-        font-size:28px;
-    }
-    .ganpati-section{
-        width:245px;
-        height:275px;
-    }
+    .page{ padding-left:8px; padding-right:8px; }
+    .card{ padding-left:14px; padding-right:14px; }
+    .title{ font-size:30px; }
+    .ganpati-section{ width:245px; height:280px; }
 }
 </style>
 </head>
 
 <body>
 
-<!-- Ambient particles -->
+<!-- Ambient Dust Layer -->
 <div id="ambient"></div>
 
 <!-- =========================
-     OPENING
+     OPENING WAX SEAL SCREEN
 ========================= -->
-
 <div id="opening">
     <div class="gold-line top"></div>
     <div class="gold-line bottom"></div>
@@ -763,9 +642,8 @@ body{
 </div>
 
 <!-- =========================
-     MAIN PAGE
+     MAIN INVITATION CARD
 ========================= -->
-
 <main class="page">
 <div class="card">
 
@@ -787,7 +665,7 @@ body{
         GANPATI BAPPA MORYA
     </div>
 
-    <!-- Ganpati Image Section -->
+    <!-- Royal Ganpati Arch -->
     <div class="ganpati-section">
         <div class="ganpati-frame">
             <div class="ganpati-inner">
@@ -801,12 +679,12 @@ body{
         </div>
     </div>
 
-    <!-- Flower Showering Button -->
+    <!-- Flower Shower Button -->
     <button class="flower-button" onclick="showerFlowers()">
         🌸 SHOWER FLOWERS ON BAPPA 🌸
     </button>
 
-    <!-- Family Photo Section -->
+    <!-- Family Photo -->
     <div class="photo-frame">
         <img 
             src="grandparents.jpg" 
@@ -896,7 +774,7 @@ body{
         </div>
     </div>
 
-    <!-- Message -->
+    <!-- Cordial Closing Message -->
     <p class="message">
         "We cordially invite you and your family to join us in seeking the divine blessings of Lord Ganesha and partake in Prasad."
     </p>
@@ -909,9 +787,9 @@ body{
 </main>
 
 <script>
-// Ambient Sparks Generator
+// Ambient Gold Particles
 const ambient = document.getElementById('ambient');
-for (let i = 0; i < 24; i++) {
+for (let i = 0; i < 28; i++) {
     const spark = document.createElement('div');
     spark.className = 'spark';
     spark.style.left = Math.random() * 100 + 'vw';
@@ -920,33 +798,33 @@ for (let i = 0; i < 24; i++) {
     ambient.appendChild(spark);
 }
 
-// Opening Screen Dismiss
+// Seal Dismiss
 function openInvitation() {
     const opening = document.getElementById('opening');
     opening.classList.add('hide');
     showerFlowers();
 }
 
-// Flower Showering Effect
+// Realistic Flower Shower
 function showerFlowers() {
     const container = document.getElementById('flowerLayer');
-    const flowers = ['🌸', '🌺', '🌼', '✨'];
+    const flowers = ['🌸', '🌺', '🌼', '✨', '💐'];
     
-    for (let i = 0; i < 30; i++) {
+    for (let i = 0; i < 32; i++) {
         setTimeout(() => {
             const el = document.createElement('div');
             el.className = 'flower';
             el.innerHTML = flowers[Math.floor(Math.random() * flowers.length)];
-            el.style.left = (Math.random() * 85 + 5) + '%';
-            el.style.animationDuration = (1.8 + Math.random() * 1.5) + 's';
+            el.style.left = (Math.random() * 85 + 6) + '%';
+            el.style.animationDuration = (1.8 + Math.random() * 1.4) + 's';
             container.appendChild(el);
             
             setTimeout(() => el.remove(), 3500);
-        }, i * 70);
+        }, i * 65);
     }
 }
 
-// Countdown Timer to 14 September
+// Live Countdown
 const targetDate = new Date("September 14, 2026 10:00:00").getTime();
 
 function updateCountdown() {
@@ -968,14 +846,14 @@ function updateCountdown() {
 setInterval(updateCountdown, 1000);
 updateCountdown();
 
-// Copy Address helper
+// Copy Address
 function copyAddress() {
     const text = "Room No. 2003, 20th Floor, Shiv Sainath SRA CHS, Near Raviraj Hotel, Worli, Mumbai 400018.";
     navigator.clipboard.writeText(text);
     alert("Address copied to clipboard!");
 }
 
-// Web Share helper
+// Share Invite
 function shareInvite() {
     if (navigator.share) {
         navigator.share({
@@ -990,3 +868,5 @@ function shareInvite() {
 </script>
 </body>
 </html>
+
+      
